@@ -1,0 +1,3 @@
+* * * * * /root/port_auto_forwarding/port_auto_forwading.sh 22 13324 root 10.10.200.130 >> /root/port_auto_forwarding/port_auto_forwading.log 2>&1 &
+* * * * * /root/port_auto_forwarding/port_auto_forwading.sh 8080 48080 root 10.10.200.130 >> /root/port_auto_forwarding/port_auto_forwading.log 2>&1 &
+* * * * * /root/port_auto_forwarding/port_auto_forwading.sh 2379 42379 root 10.10.200.130 >> /root/port_auto_forwarding/port_auto_forwading.log 2>&1 &

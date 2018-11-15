@@ -1,0 +1,22 @@
+#!/usr/bin/expect -f
+
+set LOCAL_PORT [lindex $argv 0]
+set REMOTE_PORT [lindex $argv 1]
+set USER [lindex $argv 2]
+set HOST [lindex $argv 3]
+set timeout 3
+spawn -ignore SIGHUP -ignore SIGPIPE -ignore SIGINT ssh -fN -R $HOST:$REMOTE_PORT:127.0.0.1:$LOCAL_PORT $USER@$HOST
+
+#spawn -ignore SIGHUP /bin/bash
+#send "vim\r"
+#send "i"
+#send "vim foobar\r"
+#exit
+
+expect {
+"yes/no" { send "yes\r";exp_continue }
+"*assword:*" {send "yourpassword\r";exp_continue }
+}
+#send "\x03"
+#expect_background
+exit 0
